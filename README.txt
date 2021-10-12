@@ -1,403 +1,165 @@
 LAUREN BARER 
 SFSU-ID: 918330561
-                        CSC 665 PROJECT 0
+                        CSC 665 PROJECT 2
                 
-QUESTION #1 DFS:
+QUESTION #1 Reflex Agent:
 
 EXPLANATION AND AUTOGRADER OUTPUT
 
-- For question 1 I implemented DFS using the psuedo code given in class, I then used it for BFS and A*
+- For question 1 I made sure that pacman was getting the closest food distance and making sure
+  he stays away from the ghost. I used the manhatten distance and that was my evaluation function. 
 
-(csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q1
-Starting on 9-23 at 21:04:15
+(csc665) macbook-pro:multiagent labarer$ python autograder.py -q q1
+Starting on 10-12 at 14:32:27
 
 Question q1
 ===========
-*** PASS: test_cases/q1/graph_backtrack.test
-*** 	solution:		['1:A->C', '0:C->G']
-*** 	expanded_states:	['A', 'D', 'C']
-*** PASS: test_cases/q1/graph_bfs_vs_dfs.test
-*** 	solution:		['2:A->D', '0:D->G']
-*** 	expanded_states:	['A', 'D']
-*** PASS: test_cases/q1/graph_infinite.test
-*** 	solution:		['0:A->B', '1:B->C', '1:C->G']
-*** 	expanded_states:	['A', 'B', 'C']
-*** PASS: test_cases/q1/graph_manypaths.test
-*** 	solution:		['2:A->B2', '0:B2->C', '0:C->D', '2:D->E2', '0:E2->F', '0:F->G']
-*** 	expanded_states:	['A', 'B2', 'C', 'D', 'E2', 'F']
-*** PASS: test_cases/q1/pacman_1.test
-*** 	pacman layout:		mediumMaze
-*** 	solution length: 130
-*** 	nodes expanded:		146
 
-### Question q1: 3/3 ###
+Pacman emerges victorious! Score: 1228
+Pacman emerges victorious! Score: 1209
+Pacman emerges victorious! Score: 1209
+Pacman emerges victorious! Score: 1215
+Pacman emerges victorious! Score: 1228
+Pacman emerges victorious! Score: 1231
+Pacman emerges victorious! Score: 1231
+Pacman emerges victorious! Score: 1224
+Pacman emerges victorious! Score: 1227
+Pacman emerges victorious! Score: 1231
+Average Score: 1223.3
+Scores:        1228.0, 1209.0, 1209.0, 1215.0, 1228.0, 1231.0, 1231.0, 1224.0, 1227.0, 1231.0
+Win Rate:      10/10 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win, Win, Win, Win
+*** PASS: test_cases/q1/grade-agent.test (4 of 4 points)
+***     1223.3 average score (2 of 2 points)
+***         Grading scheme:
+***          < 500:  0 points
+***         >= 500:  1 points
+***         >= 1000:  2 points
+***     10 games not timed out (0 of 0 points)
+***         Grading scheme:
+***          < 10:  fail
+***         >= 10:  0 points
+***     10 wins (2 of 2 points)
+***         Grading scheme:
+***          < 1:  fail
+***         >= 1:  0 points
+***         >= 5:  1 points
+***         >= 10:  2 points
+
+### Question q1: 4/4 ###
 
 
-Finished at 21:04:15
+Finished at 14:37:20
 
 Provisional grades
 ==================
-Question q1: 3/3
+Question q1: 4/4
 ------------------
-Total: 3/3
+Total: 4/4
 
 
 
-
-QUESTION #2 BFS:
+QUESTION #2 Minimax:
 
 EXPLANATION AND AUTOGRADER OUTPUT
 
-- Question 2 was prety straight forward I copied and pasted my dfs but modified it to use
-queue
+- For question 2 minimax I used the psuedocode and algorithm to make sure it finds 
+  the best node path and works using the minimax tree
 
 (csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q2
 Starting on 9-23 at 21:05:59
 
-Question q2
-===========
-*** PASS: test_cases/q2/graph_backtrack.test
-*** 	solution:		['1:A->C', '0:C->G']
-*** 	expanded_states:	['A', 'B', 'C', 'D']
-*** PASS: test_cases/q2/graph_bfs_vs_dfs.test
-*** 	solution:		['1:A->G']
-*** 	expanded_states:	['A', 'B']
-*** PASS: test_cases/q2/graph_infinite.test
-*** 	solution:		['0:A->B', '1:B->C', '1:C->G']
-*** 	expanded_states:	['A', 'B', 'C']
-*** PASS: test_cases/q2/graph_manypaths.test
-*** 	solution:		['1:A->C', '0:C->D', '1:D->F', '0:F->G']
-*** 	expanded_states:	['A', 'B1', 'C', 'B2', 'D', 'E1', 'F', 'E2']
-*** PASS: test_cases/q2/pacman_1.test
-*** 	pacman layout:		mediumMaze
-*** 	solution length: 68
-*** 	nodes expanded:		269
+Pacman died! Score: 84
+Average Score: 84.0
+Scores:        84.0
+Win Rate:      0/1 (0.00)
+Record:        Loss
+*** Finished running MinimaxAgent on smallClassic after 36 seconds.
+*** Won 0 out of 1 games. Average score: 84.000000 ***
+*** PASS: test_cases/q2/8-pacman-game.test
 
-### Question q2: 3/3 ###
+### Question q2: 5/5 ###
 
 
-Finished at 21:05:59
+Finished at 14:38:33
 
 Provisional grades
 ==================
-Question q2: 3/3
+Question q2: 5/5
 ------------------
-Total: 3/3
+Total: 5/5
 
 
 
-
-QUESTION #3 Uniform Cost Search:
+QUESTION #4 Expectimax:
 
 EXPLANATION AND AUTOGRADER OUTPUT
 
-- Question three i also modified the code from my dfs.
+- Question four I used my minimax fuction but changed it so it was expectimax, 
+  also adding an average function to it
+
+Pacman died! Score: 84
+Average Score: 84.0
+Scores:        84.0
+Win Rate:      0/1 (0.00)
+Record:        Loss
+*** Finished running ExpectimaxAgent on smallClassic after 36 seconds.
+*** Won 0 out of 1 games. Average score: 84.000000 ***
+*** PASS: test_cases/q4/7-pacman-game.test
+
+### Question q4: 5/5 ###
 
 
-(csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q3
-Starting on 9-23 at 21:07:17
-
-Question q3
-===========
-*** PASS: test_cases/q3/graph_backtrack.test
-*** 	solution:		['1:A->C', '0:C->G']
-*** 	expanded_states:	['A', 'B', 'C', 'D']
-*** PASS: test_cases/q3/graph_bfs_vs_dfs.test
-*** 	solution:		['1:A->G']
-*** 	expanded_states:	['A', 'B']
-*** PASS: test_cases/q3/graph_infinite.test
-*** 	solution:		['0:A->B', '1:B->C', '1:C->G']
-*** 	expanded_states:	['A', 'B', 'C']
-*** PASS: test_cases/q3/graph_manypaths.test
-*** 	solution:		['1:A->C', '0:C->D', '1:D->F', '0:F->G']
-*** 	expanded_states:	['A', 'B1', 'C', 'B2', 'D', 'E1', 'F', 'E2']
-*** PASS: test_cases/q3/ucs_0_graph.test
-*** 	solution:		['Right', 'Down', 'Down']
-*** 	expanded_states:	['A', 'B', 'D', 'C', 'G']
-*** PASS: test_cases/q3/ucs_1_problemC.test
-*** 	pacman layout:		mediumMaze
-*** 	solution length: 68
-*** 	nodes expanded:		269
-*** PASS: test_cases/q3/ucs_2_problemE.test
-*** 	pacman layout:		mediumMaze
-*** 	solution length: 74
-*** 	nodes expanded:		260
-*** PASS: test_cases/q3/ucs_3_problemW.test
-*** 	pacman layout:		mediumMaze
-*** 	solution length: 152
-*** 	nodes expanded:		173
-*** PASS: test_cases/q3/ucs_4_testSearch.test
-*** 	pacman layout:		testSearch
-*** 	solution length: 7
-*** 	nodes expanded:		14
-*** PASS: test_cases/q3/ucs_5_goalAtDequeue.test
-*** 	solution:		['1:A->B', '0:B->C', '0:C->G']
-*** 	expanded_states:	['A', 'B', 'C']
-
-### Question q3: 3/3 ###
-
-
-Finished at 21:07:17
+Finished at 14:40:56
 
 Provisional grades
 ==================
-Question q3: 3/3
+Question q4: 5/5
 ------------------
-Total: 3/3
+Total: 5/5
 
 
 
-
-QUESTION #4 A* Search:
+QUESTION #5 Better Evaluation Function
 
 EXPLANATION AND AUTOGRADER OUTPUT
 
-- Question 4 I created a heuristic and also modified the code from my uniform cost search
+- Question 5 was pretty easy I used my old evaluation fucntion just modified it 
+  slightly and got it working 
 
-(csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q4
-Starting on 9-23 at 21:09:30
+Pacman emerges victorious! Score: 1170
+Average Score: 1018.3
+Scores:        976.0, 949.0, 973.0, 1172.0, 964.0, 978.0, 950.0, 871.0, 1180.0, 1170.0
+Win Rate:      10/10 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win, Win, Win, Win
+*** PASS: test_cases/q5/grade-agent.test (6 of 6 points)
+***     1018.3 average score (2 of 2 points)
+***         Grading scheme:
+***          < 500:  0 points
+***         >= 500:  1 points
+***         >= 1000:  2 points
+***     10 games not timed out (1 of 1 points)
+***         Grading scheme:
+***          < 0:  fail
+***         >= 0:  0 points
+***         >= 10:  1 points
+***     10 wins (3 of 3 points)
+***         Grading scheme:
+***          < 1:  fail
+***         >= 1:  1 points
+***         >= 5:  2 points
+***         >= 10:  3 points
 
-Question q4
-===========
-*** PASS: test_cases/q4/astar_0.test
-*** 	solution:		['Right', 'Down', 'Down']
-*** 	expanded_states:	['A', 'B', 'D', 'C', 'G']
-*** PASS: test_cases/q4/astar_1_graph_heuristic.test
-*** 	solution:		['0', '0', '2']
-*** 	expanded_states:	['S', 'A', 'D', 'C']
-*** PASS: test_cases/q4/astar_2_manhattan.test
-*** 	pacman layout:		mediumMaze
-*** 	solution length: 68
-*** 	nodes expanded:		221
-*** PASS: test_cases/q4/astar_3_goalAtDequeue.test
-*** 	solution:		['1:A->B', '0:B->C', '0:C->G']
-*** 	expanded_states:	['A', 'B', 'C']
-*** PASS: test_cases/q4/graph_backtrack.test
-*** 	solution:		['1:A->C', '0:C->G']
-*** 	expanded_states:	['A', 'B', 'C', 'D']
-*** PASS: test_cases/q4/graph_manypaths.test
-*** 	solution:		['1:A->C', '0:C->D', '1:D->F', '0:F->G']
-*** 	expanded_states:	['A', 'B1', 'C', 'B2', 'D', 'E1', 'F', 'E2']
-
-### Question q4: 3/3 ###
-
-
-Finished at 21:09:30
-
-Provisional grades
-==================
-Question q4: 3/3
-------------------
-Total: 3/3
+### Question q5: 6/6 ###
 
 
-
-QUESTION #5 Corners Problem:
-
-EXPLANATION AND AUTOGRADER OUTPUT
-
-- Question 5 I wanted to check the corners and return the closest one as well as checkig which are
-left to check then getting the best time
-
-(csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q5
-Starting on 9-23 at 21:09:30
-
-Question q5
-===========
-*** PASS: test_cases/q5/corner_tiny_corner.test
-*** 	pacman layout:		tinyCorner
-*** 	solution length:		28
-
-### Question q5: 3/3 ###
-
-
-Finished at 21:12:44
+Finished at 14:46:01
 
 Provisional grades
 ==================
-Question q2: 3/3
-Question q5: 3/3
-------------------
-
-
-
-QUESTION #6 Corners Problem Heuristic:
-
-EXPLANATION AND AUTOGRADER OUTPUT
-
-- Question 6 I had issues because my heuristic wasnt addmissible. I could figure out
-why it was giving out such a bit number but then realized I was using the wrong distance
-function
-
-(csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q6
-Starting on 9-23 at 21:09:30
-
-
-Question q6
-===========
-*** PASS: heuristic value less than true cost at start state
-*** PASS: heuristic value less than true cost at start state
-*** PASS: heuristic value less than true cost at start state
-path: ['North', 'East', 'East', 'East', 'East', 'North', 'North', 'West', 'West', 'West', 'West', 'North', 'North', 'North', 'North', 'North', 'North', 'North', 'North', 'West', 'West', 'West', 'West', 'South', 'South', 'East', 'East', 'East', 'East', 'South', 'South', 'South', 'South', 'South', 'South', 'West', 'West', 'South', 'South', 'South', 'West', 'West', 'East', 'East', 'North', 'North', 'North', 'East', 'East', 'East', 'East', 'East', 'East', 'East', 'East', 'South', 'South', 'East', 'East', 'East', 'East', 'East', 'North', 'North', 'East', 'East', 'North', 'North', 'East', 'East', 'North', 'North', 'East', 'East', 'East', 'East', 'South', 'South', 'South', 'South', 'East', 'East', 'North', 'North', 'East', 'East', 'South', 'South', 'South', 'South', 'South', 'North', 'North', 'North', 'North', 'North', 'North', 'North', 'West', 'West', 'North', 'North', 'East', 'East', 'North', 'North']
-path length: 106
-*** PASS: Heuristic resulted in expansion of 692 nodes
-
-### Question q6: 3/3 ###
-
-
-Finished at 21:15:14
-
-Provisional grades
-==================
-Question q4: 3/3
-Question q6: 3/3
+Question q5: 6/6
 ------------------
 Total: 6/6
-
-
-
-QUESTION #7 Eating all Dots:
-
-EXPLANATION AND AUTOGRADER OUTPUT
-
-- Question 7 I created a search fucntion which makes sure pacman finds all of the food
-as fast as possible
-
-(csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q6
-Starting on 9-23 at 21:09:30
-
-
-Question q7
-===========
-*** PASS: test_cases/q7/food_heuristic_1.test
-*** PASS: test_cases/q7/food_heuristic_10.test
-*** PASS: test_cases/q7/food_heuristic_11.test
-*** PASS: test_cases/q7/food_heuristic_12.test
-*** PASS: test_cases/q7/food_heuristic_13.test
-*** PASS: test_cases/q7/food_heuristic_14.test
-*** PASS: test_cases/q7/food_heuristic_15.test
-*** PASS: test_cases/q7/food_heuristic_16.test
-*** PASS: test_cases/q7/food_heuristic_17.test
-*** PASS: test_cases/q7/food_heuristic_2.test
-*** PASS: test_cases/q7/food_heuristic_3.test
-*** PASS: test_cases/q7/food_heuristic_4.test
-*** PASS: test_cases/q7/food_heuristic_5.test
-*** PASS: test_cases/q7/food_heuristic_6.test
-*** PASS: test_cases/q7/food_heuristic_7.test
-*** PASS: test_cases/q7/food_heuristic_8.test
-*** PASS: test_cases/q7/food_heuristic_9.test
-*** PASS: test_cases/q7/food_heuristic_grade_tricky.test
-*** 	expanded nodes: 4137
-*** 	thresholds: [15000, 12000, 9000, 7000]
-
-### Question q7: 5/4 ###
-
-
-Finished at 21:18:36
-
-Provisional grades
-==================
-Question q4: 3/3
-Question q7: 5/4
-------------------
-Total: 8/7
-
-
-
-QUESTION #8 Suboptimal Search:
-
-EXPLANATION AND AUTOGRADER OUTPUT
-
-- Question 8 I simply called my bfs function and in the AnyFoodSerchProblem I initialize an algorithm 
-which finds the most optimal path for pacman
-
-
-(csc665) macbook-pro:proj1-search-python3 labarer$ python autograder.py -q q8
-Starting on 9-23 at 21:22:05
-
-Question q8
-===========
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_1.test
-*** 	pacman layout:		Test 1
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_10.test
-*** 	pacman layout:		Test 10
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_11.test
-*** 	pacman layout:		Test 11
-*** 	solution length:		2
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_12.test
-*** 	pacman layout:		Test 12
-*** 	solution length:		3
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_13.test
-*** 	pacman layout:		Test 13
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_2.test
-*** 	pacman layout:		Test 2
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_3.test
-*** 	pacman layout:		Test 3
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_4.test
-*** 	pacman layout:		Test 4
-*** 	solution length:		3
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_5.test
-*** 	pacman layout:		Test 5
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_6.test
-*** 	pacman layout:		Test 6
-*** 	solution length:		2
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_7.test
-*** 	pacman layout:		Test 7
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_8.test
-*** 	pacman layout:		Test 8
-*** 	solution length:		1
-[SearchAgent] using function depthFirstSearch
-[SearchAgent] using problem type PositionSearchProblem
-*** PASS: test_cases/q8/closest_dot_9.test
-*** 	pacman layout:		Test 9
-*** 	solution length:		1
-
-### Question q8: 3/3 ###
-
-
-Finished at 21:22:05
-
-Provisional grades
-==================
-Question q8: 3/3
-------------------
-Total: 3/3
-
-
-
-
-
 
 
 
